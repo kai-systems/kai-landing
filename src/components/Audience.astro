@@ -1,46 +1,46 @@
 ---
-import SectionHeading from "./ui/SectionHeading.astro";
-import GlowCard from "./ui/GlowCard.astro";
-
-const audiences = [
+const roles = [
   {
     title: "Engineers",
-    description: "Submit requests, track deployments, get answers to technical questions, and manage workflows through a single conversational interface.",
-    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 16 4-4-4-4"/><path d="m6 8-4 4 4 4"/><path d="m14.5 4-5 16"/></svg>`,
+    description: "Trigger deployments, look up service owners, track incidents — without leaving the conversation.",
   },
   {
     title: "Product Managers",
-    description: "Monitor team velocity, track feature requests, coordinate across teams, and get visibility into dependencies — all through natural language.",
-    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>`,
+    description: "Check project status, coordinate across teams, and surface blockers in seconds instead of meetings.",
   },
   {
     title: "Designers",
-    description: "Submit design system requests, track implementation status, share feedback, and stay connected to the engineering workflow without context-switching.",
-    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.375 2.625a1 1 0 0 1 3 3l-9.013 9.014a2 2 0 0 1-.853.505l-2.873.84a.5.5 0 0 1-.62-.62l.84-2.873a2 2 0 0 1 .506-.852z"/></svg>`,
+    description: "Submit requests, track handoff status, and stay connected to implementation without context-switching.",
   },
   {
     title: "Team Leads",
-    description: "Organization-wide visibility into request patterns, bottlenecks, team health, and trends. Data-driven insights for better decisions.",
-    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="8" x="2" y="2" rx="2" ry="2"/><rect width="20" height="8" x="2" y="14" rx="2" ry="2"/><line x1="6" x2="6.01" y1="6" y2="6"/><line x1="6" x2="6.01" y1="18" y2="18"/></svg>`,
+    description: "See patterns across your team's work — what's moving, what's stuck, and where to focus next.",
   },
 ];
+
+const glassCardStyle = "backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);";
 ---
 
 <section id="for-teams" class="py-20 md:py-32">
   <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-    <SectionHeading
-      label="For Teams"
-      title="Built for Every Role"
-      subtitle="Approachable for non-technical team members. Powerful enough for senior engineers. One interface for everyone."
-    />
+    <div class="text-center max-w-2xl mx-auto mb-16" data-reveal>
+      <span class="inline-block text-xs font-mono font-semibold tracking-widest uppercase text-gold-primary mb-4">
+        Built for teams
+      </span>
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-surface-100 mb-4">
+        One interface for every role
+      </h2>
+      <p class="text-lg text-surface-400 leading-relaxed">
+        Everyone gets results in the form they need. No tool-hopping required.
+      </p>
+    </div>
 
-    <div class="grid md:grid-cols-2 gap-5" data-reveal-stagger>
-      {audiences.map((item) => (
-        <GlowCard class="group">
-          <div class="text-gold-primary mb-4 group-hover:text-cream transition-colors duration-300" set:html={item.icon} />
-          <h3 class="text-lg font-heading font-semibold text-surface-100 mb-2">{item.title}</h3>
-          <p class="text-sm text-surface-400 leading-relaxed">{item.description}</p>
-        </GlowCard>
+    <div class="grid sm:grid-cols-2 gap-4" data-reveal-stagger>
+      {roles.map((role) => (
+        <div class="rounded-xl p-5 glass-card glow-border hover:border-gold-primary/25 hover:bg-white/[0.06] transition-all duration-300" style={glassCardStyle}>
+          <h3 class="text-base font-heading font-semibold text-surface-100 mb-1.5">{role.title}</h3>
+          <p class="text-sm text-surface-400 leading-relaxed">{role.description}</p>
+        </div>
       ))}
     </div>
   </div>

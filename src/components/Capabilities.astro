@@ -1,0 +1,49 @@
+---
+import GlowCard from "./ui/GlowCard.astro";
+
+const capabilities = [
+  {
+    title: "Task Board",
+    description: "Every request becomes a tracked task. See what's in progress, what's blocked, and what's done — all in one place.",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>`,
+  },
+  {
+    title: "Inbox",
+    description: "Conversations, notifications, and follow-ups in a unified inbox. Nothing gets lost between tools.",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>`,
+  },
+  {
+    title: "Smart Routing",
+    description: "Kai figures out what you need and routes it to the right place — a tool, a workflow, or a teammate.",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>`,
+  },
+  {
+    title: "Memory",
+    description: "Kai remembers your preferences, your team's patterns, and past conversations — getting better the more you use it.",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>`,
+  },
+];
+---
+
+<section id="capabilities" class="py-20 md:py-32">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-2xl mx-auto mb-16" data-reveal>
+      <span class="inline-block text-xs font-mono font-semibold tracking-widest uppercase text-gold-primary mb-4">
+        Go further
+      </span>
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-surface-100">
+        Everything you need, nothing you don't
+      </h2>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-5" data-reveal-stagger>
+      {capabilities.map((cap) => (
+        <GlowCard class="group">
+          <div class="text-gold-primary mb-4 group-hover:text-cream transition-colors duration-300" set:html={cap.icon} />
+          <h3 class="text-lg font-heading font-semibold text-surface-100 mb-2">{cap.title}</h3>
+          <p class="text-surface-400 leading-relaxed">{cap.description}</p>
+        </GlowCard>
+      ))}
+    </div>
+  </div>
+</section>

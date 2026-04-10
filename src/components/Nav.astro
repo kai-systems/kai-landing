@@ -1,9 +1,7 @@
 ---
 const links = [
-  { label: "How It Works", href: "#how-it-works" },
-  { label: "Features", href: "#features" },
-  { label: "Compare", href: "#comparison" },
-  { label: "Get Started", href: "#get-started" },
+  { label: "Use Cases", href: "#use-cases" },
+  { label: "Capabilities", href: "#capabilities" },
   { label: "For Teams", href: "#for-teams" },
   { label: "Open Source", href: "#open-source" },
 ];
@@ -115,7 +113,7 @@ const glassNavStyle = "backdrop-filter: blur(20px) saturate(120%); -webkit-backd
     navLinks.some((link) => link.getAttribute("href") === `#${section.id}`)
   );
 
-  const setActiveLink = (id) => {
+  const setActiveLink = (id: string) => {
     navLinks.forEach((link) => {
       const isActive = link.getAttribute("href") === `#${id}`;
       link.classList.toggle("is-active", isActive);

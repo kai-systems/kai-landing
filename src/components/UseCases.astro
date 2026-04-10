@@ -1,0 +1,132 @@
+---
+const glassCardStyle = "backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);";
+---
+
+<section id="use-cases" class="py-20 md:py-32">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <!-- Use Case 1: Get things done -->
+    <div class="grid md:grid-cols-2 gap-10 md:gap-16 items-center mb-24 md:mb-32" data-reveal>
+      <div>
+        <span class="inline-block text-xs font-mono font-semibold tracking-widest uppercase text-gold-primary mb-4">
+          Get things done
+        </span>
+        <h2 class="text-3xl md:text-4xl font-heading font-bold text-surface-100 mb-4">
+          Ask for what you need. Kai figures out how.
+        </h2>
+        <p class="text-lg text-surface-400 leading-relaxed">
+          Describe what you want in plain language. Kai classifies your request, routes it to the right tool or workflow, and tracks it through to completion — so you stay focused on the work that matters.
+        </p>
+      </div>
+      <div class="rounded-xl glass-card glow-border p-5" style={glassCardStyle}>
+        <div class="space-y-3">
+          <div class="flex gap-3">
+            <div class="w-8 h-8 rounded-full bg-gold-primary/15 flex items-center justify-center shrink-0 mt-0.5">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-gold-primary"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+            </div>
+            <div class="rounded-xl bg-surface-800/60 px-4 py-3 text-sm text-surface-200">
+              Spin up a new staging environment for the payments service and let the team know it's ready
+            </div>
+          </div>
+          <div class="flex gap-3 justify-end">
+            <div class="rounded-xl bg-gold-primary/10 border border-gold-primary/15 px-4 py-3 text-sm text-surface-200 max-w-sm">
+              <p class="mb-2">On it. Here's what I'm doing:</p>
+              <div class="space-y-1.5 text-surface-400 text-xs font-mono">
+                <div class="flex items-center gap-2"><span class="text-green-400">✓</span> Provisioning staging-payments-v2</div>
+                <div class="flex items-center gap-2"><span class="text-green-400">✓</span> Running migration scripts</div>
+                <div class="flex items-center gap-2"><span class="text-green-400">✓</span> Notified #payments-team in Slack</div>
+              </div>
+            </div>
+            <div class="w-8 h-8 rounded-full bg-gold-primary/20 flex items-center justify-center shrink-0 mt-0.5">
+              <span class="text-gold-primary font-heading font-bold text-xs">K</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Use Case 2: Stay in the loop -->
+    <div class="grid md:grid-cols-2 gap-10 md:gap-16 items-center mb-24 md:mb-32" data-reveal>
+      <div class="order-2 md:order-1">
+        <div class="rounded-xl glass-card glow-border p-5" style={glassCardStyle}>
+          <div class="space-y-3">
+            <div class="flex gap-3">
+              <div class="w-8 h-8 rounded-full bg-gold-primary/15 flex items-center justify-center shrink-0 mt-0.5">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-gold-primary"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+              </div>
+              <div class="rounded-xl bg-surface-800/60 px-4 py-3 text-sm text-surface-200">
+                What's the status of the checkout redesign?
+              </div>
+            </div>
+            <div class="flex gap-3 justify-end">
+              <div class="rounded-xl bg-gold-primary/10 border border-gold-primary/15 px-4 py-3 text-sm text-surface-200 max-w-sm">
+                <p class="mb-2">Here's where things stand:</p>
+                <div class="space-y-1.5 text-surface-400 text-xs">
+                  <div><span class="text-cream font-medium">Design</span> — approved, handed off Tuesday</div>
+                  <div><span class="text-cream font-medium">Frontend</span> — 3 of 5 components merged</div>
+                  <div><span class="text-cream font-medium">Blocked</span> — waiting on payment API schema from @maya</div>
+                </div>
+                <p class="mt-2 text-xs text-surface-500">Want me to ping Maya about the schema?</p>
+              </div>
+              <div class="w-8 h-8 rounded-full bg-gold-primary/20 flex items-center justify-center shrink-0 mt-0.5">
+                <span class="text-gold-primary font-heading font-bold text-xs">K</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="order-1 md:order-2">
+        <span class="inline-block text-xs font-mono font-semibold tracking-widest uppercase text-gold-primary mb-4">
+          Stay in the loop
+        </span>
+        <h2 class="text-3xl md:text-4xl font-heading font-bold text-surface-100 mb-4">
+          Know where everything stands. Instantly.
+        </h2>
+        <p class="text-lg text-surface-400 leading-relaxed">
+          Ask about any project, task, or person. Kai pulls context from across your tools and gives you a clear picture — no digging through dashboards or chasing people down.
+        </p>
+      </div>
+    </div>
+
+    <!-- Use Case 3: Keep your team connected -->
+    <div class="grid md:grid-cols-2 gap-10 md:gap-16 items-center" data-reveal>
+      <div>
+        <span class="inline-block text-xs font-mono font-semibold tracking-widest uppercase text-gold-primary mb-4">
+          Keep your team connected
+        </span>
+        <h2 class="text-3xl md:text-4xl font-heading font-bold text-surface-100 mb-4">
+          The right message to the right person. Automatically.
+        </h2>
+        <p class="text-lg text-surface-400 leading-relaxed">
+          Kai handles the coordination — notifying teammates, scheduling follow-ups, and routing questions to whoever can answer them. You stop being the bottleneck.
+        </p>
+      </div>
+      <div class="rounded-xl glass-card glow-border p-5" style={glassCardStyle}>
+        <div class="space-y-3">
+          <div class="flex gap-3">
+            <div class="w-8 h-8 rounded-full bg-gold-primary/15 flex items-center justify-center shrink-0 mt-0.5">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-gold-primary"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+            </div>
+            <div class="rounded-xl bg-surface-800/60 px-4 py-3 text-sm text-surface-200">
+              The API rate limiter is dropping requests in prod. Find out who owns that service and loop them in.
+            </div>
+          </div>
+          <div class="flex gap-3 justify-end">
+            <div class="rounded-xl bg-gold-primary/10 border border-gold-primary/15 px-4 py-3 text-sm text-surface-200 max-w-sm">
+              <p class="mb-2">Found it — the rate-limiter service is owned by the platform team.</p>
+              <div class="space-y-1.5 text-surface-400 text-xs">
+                <div class="flex items-center gap-2"><span class="text-green-400">✓</span> Messaged @jordan (on-call) with the issue</div>
+                <div class="flex items-center gap-2"><span class="text-green-400">✓</span> Created incident ticket PLAT-892</div>
+                <div class="flex items-center gap-2"><span class="text-gold-primary">→</span> Tracking for your task board</div>
+              </div>
+            </div>
+            <div class="w-8 h-8 rounded-full bg-gold-primary/20 flex items-center justify-center shrink-0 mt-0.5">
+              <span class="text-gold-primary font-heading font-bold text-xs">K</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
