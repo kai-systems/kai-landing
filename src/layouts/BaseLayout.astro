@@ -57,64 +57,6 @@ const {
         .querySelectorAll("[data-reveal], [data-reveal-stagger]")
         .forEach((el) => observer.observe(el));
 
-      // Download resolver — intercepts .download-btn clicks,
-      // fetches the latest GitHub release, and picks the right
-      // .dmg for the user's CPU architecture.
-      let resolvedUrl: string | null = null;
-
-      function getArch(): string {
-        // @ts-expect-error — userAgentData is not yet in all TS libs
-        const uaArch = navigator.userAgentData?.architecture?.toLowerCase?.() ?? "";
-        if (uaArch === "arm" || uaArch === "arm64") return "arm64";
-        if (uaArch === "x86" || uaArch === "x86_64") return "x86_64";
-
-        const ua = navigator.userAgent.toLowerCase();
-        // Apple Silicon Macs still report Intel in some browsers,
-        // but we can detect via WebGL renderer or platform hints.
-        // Default to arm64 for modern macOS — most users are Apple Silicon now.
-        if (ua.includes("mac")) return "arm64";
-        return "x86_64";
-      }
-
-      async function resolve(fallback: string): Promise<string> {
-        if (resolvedUrl) return resolvedUrl;
-
-        try {
-          // Derive the API URL from the fallback (releases/latest page)
-          const apiUrl = fallback
-            .replace("github.com", "api.github.com/repos")
-            .replace(/\/releases\/latest\/?$/, "/releases/latest");
-
-          const res = await fetch(apiUrl, {
-            headers: { Accept: "application/vnd.github.v3+json" },
-          });
-          if (!res.ok) return fallback;
-
-          const data = await res.json();
-          const arch = getArch();
-          const assets: { name: string; browser_download_url: string }[] = data.assets ?? [];
-
-          // Find .dmg matching the user's arch
-          const match =
-            assets.find((a) => a.name.endsWith(".dmg") && a.name.includes(arch)) ??
-            assets.find((a) => a.name.endsWith(".dmg") && a.name.includes("universal")) ??
-            assets.find((a) => a.name.endsWith(".dmg"));
-
-          resolvedUrl = match?.browser_download_url ?? fallback;
-          return resolvedUrl;
-        } catch {
-          return fallback;
-        }
-      }
-
-      document.querySelectorAll(".download-btn").forEach((btn) => {
-        btn.addEventListener("click", async (e) => {
-          e.preventDefault();
-          const fallback = (btn as HTMLAnchorElement).href;
-          const url = await resolve(fallback);
-          window.location.href = url;
-        });
-      });
     </script>
   </body>
 </html>
