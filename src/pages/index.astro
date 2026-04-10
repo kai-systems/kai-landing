@@ -1,0 +1,28 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Nav from "../components/Nav.astro";
+import Hero from "../components/Hero.astro";
+import HeroNeuralField from "../components/HeroNeuralField.astro";
+import HowItWorks from "../components/HowItWorks.astro";
+import FeatureGrid from "../components/FeatureGrid.astro";
+import Comparison from "../components/Comparison.astro";
+import GettingStarted from "../components/GettingStarted.astro";
+import Audience from "../components/Audience.astro";
+import InternalCTA from "../components/InternalCTA.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<BaseLayout>
+  <Nav />
+  <main class="landing-main relative overflow-hidden" data-neural-root>
+    <HeroNeuralField />
+    <Hero />
+    <HowItWorks />
+    <FeatureGrid />
+    <Comparison />
+    <GettingStarted />
+    <Audience />
+    <InternalCTA />
+  </main>
+  <Footer />
+</BaseLayout>

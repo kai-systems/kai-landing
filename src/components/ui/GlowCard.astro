@@ -1,0 +1,20 @@
+---
+interface Props {
+  class?: string;
+}
+
+const { class: className = "" } = Astro.props;
+const glassCardStyle = "backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);";
+---
+
+<div
+  class:list={[
+    "rounded-2xl p-6 glass-card glow-border",
+    "hover:border-gold-primary/25 hover:bg-white/[0.06]",
+    "transition-all duration-300 ease-out",
+    className,
+  ]}
+  style={glassCardStyle}
+>
+  <slot />
+</div>

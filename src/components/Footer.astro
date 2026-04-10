@@ -1,0 +1,76 @@
+---
+const columns = [
+  {
+    title: "Product",
+    links: [
+      { label: "Download", href: "https://github.com/kai-systems/kai/releases/latest/download/Kai.dmg" },
+      { label: "GitHub", href: "https://github.com/kai-systems/kai" },
+      { label: "Releases", href: "https://github.com/kai-systems/kai/releases" },
+    ],
+  },
+  {
+    title: "Resources",
+    links: [
+      { label: "How It Works", href: "#how-it-works" },
+      { label: "Features", href: "#features" },
+      { label: "Get Started", href: "#get-started" },
+    ],
+  },
+  {
+    title: "Community",
+    links: [
+      { label: "Discussions", href: "https://github.com/kai-systems/kai/discussions" },
+      { label: "Issues", href: "https://github.com/kai-systems/kai/issues" },
+      { label: "Contributing", href: "https://github.com/kai-systems/kai/blob/main/CONTRIBUTING.md" },
+    ],
+  },
+  {
+    title: "Legal",
+    links: [
+      { label: "Apache 2.0 License", href: "https://github.com/kai-systems/kai/blob/main/LICENSE" },
+    ],
+  },
+];
+---
+
+<footer class="footer-shell border-t border-white/8 pt-16 pb-8">
+  <div class="footer-backdrop"></div>
+  <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Columns -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
+      {columns.map((col) => (
+        <div>
+          <h4 class="text-sm font-heading font-semibold text-surface-200 mb-4">{col.title}</h4>
+          <ul class="space-y-2">
+            {col.links.map((link) => (
+              <li>
+                <a
+                  href={link.href}
+                  target={link.href.startsWith("http") ? "_blank" : undefined}
+                  rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                  class="text-sm text-surface-300 hover:text-cream transition-colors duration-200"
+                >
+                  {link.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+
+    <!-- Bottom -->
+    <div class="border-t border-white/8 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-3">
+        <span class="text-sm font-heading font-bold tracking-[0.18em] uppercase">
+          <span class="text-medium-gold">KAI</span>
+        </span>
+        <span class="text-xs text-surface-500">|</span>
+        <span class="text-xs text-surface-300">Conversational AI interface</span>
+      </div>
+      <span class="text-xs text-surface-400">
+        &copy; {new Date().getFullYear()} Kai Contributors. Open source under Apache 2.0.
+      </span>
+    </div>
+  </div>
+</footer>
