@@ -168,7 +168,6 @@ const glassNavStyle = "backdrop-filter: blur(20px) saturate(120%); -webkit-backd
   const closeIcon = document.getElementById("menu-close-icon");
 
   btn?.addEventListener("click", () => {
-    const isOpen = !menu?.classList.contains("hidden");
     menu?.classList.toggle("hidden");
     openIcon?.classList.toggle("hidden");
     closeIcon?.classList.toggle("hidden");

@@ -1,9 +1,11 @@
 ---
+import siteConfig from "../../site.config.json";
+
 const columns = [
   {
     title: "Product",
     links: [
-      { label: "Download", href: "https://github.com/kai-systems/kai/releases/latest/download/Kai.dmg" },
+      { label: "Download", href: siteConfig.downloadUrl },
       { label: "GitHub", href: "https://github.com/kai-systems/kai" },
       { label: "Releases", href: "https://github.com/kai-systems/kai/releases" },
     ],
@@ -11,9 +13,9 @@ const columns = [
   {
     title: "Resources",
     links: [
-      { label: "How It Works", href: "#how-it-works" },
-      { label: "Features", href: "#features" },
-      { label: "Get Started", href: "#get-started" },
+      { label: "Use Cases", href: "#use-cases" },
+      { label: "Capabilities", href: "#capabilities" },
+      { label: "For Teams", href: "#for-teams" },
     ],
   },
   {
